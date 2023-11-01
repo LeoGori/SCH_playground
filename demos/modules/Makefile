@@ -1,4 +1,4 @@
-obj-m += hello.o
+obj-m += evil.o
 
 all:
 	make -C /sources/linux M=$(PWD) modules
@@ -13,4 +13,4 @@ prepare:
 
 copy-to-fs: all
 	mkdir -p /staging/initramfs/fs/modules
-	cp hello.ko /staging/initramfs/fs/modules
+	cp evil.ko /staging/initramfs/fs/modules

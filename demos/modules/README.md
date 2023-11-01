@@ -1,11 +1,18 @@
-# Simple "hello world" module
+# Simple "evil" module
 
-Connect to the AOS container, then:
+Fast way, once in the docker container;
+./run_all.sh
+
+The command above runs automatically the following procedure.
+If you choose this way, you can skip the following, otherwise...
+
+
+...Connect to the AOS container, then:
 
 ```bash
 cd /demos/modules
 make prepare
-make all               # to build the module in `hello.c`
+make all               # to build the module in `evil.c`
 make copy-to-fs        # prepare the module to be used for the next `build-fs.sh`
 /scripts/build-fs.sh   # build the file system
 /scripts/start-qemu.sh # run the kernel
@@ -14,8 +21,8 @@ make copy-to-fs        # prepare the module to be used for the next `build-fs.sh
 Once in the QEMU env:
 
 ```
-insmod modules/hello.ko # to load the hello world module
-rmmod hello             # to remove the hello world module
+insmod modules/evil.ko # to load the evil module
+rmmod evil             # to remove the evil module
 ```
 
 Note: you will see a message saying that the kernel is tainted. For this course,
