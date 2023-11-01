@@ -25,7 +25,7 @@ Clone the repo and change directory inside the SCH_playground folder, then:
     ```
 - Create the good file
     ```
-    touch good
+    echo "Hello world|" > good
     ```
 - Check the integrity of the getdents64 syscall before the injection
     ```
@@ -39,5 +39,9 @@ Clone the repo and change directory inside the SCH_playground folder, then:
     ```
     ls
     ```
+- Check that the file is still present
+    ```
+    cat good
+    ```
 
-If you cannot see the file named good, then congratulations! The syscall has been succesfully hijacked! >:)
+If you cannot see the file named good but you can see its content, then congratulations! The syscall has been succesfully hijacked! >:)
