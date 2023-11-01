@@ -8,6 +8,7 @@ demos/modules/evil.ko
 demos/modules/evil.mod
 demos/modules/evil.mod.o
 demos/modules/evil.o
+demos/modules/evil.mod.c
 demos/modules/Module.symvers
 demos/modules/modules.order
 scripts/.gdb_history

