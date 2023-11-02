@@ -1,13 +1,16 @@
 # Simple "evil" module
 
-Fast way, once in the docker container;
+### Fast way
+Once in the docker container:
+```
 ./run_all.sh
+```
 
-The command above runs automatically the following procedure.
-If you choose this way, you can skip the following, otherwise...
+The command above runs automatically the procedure below.
+If you choose this way, you can skip the following.
 
-
-...Connect to the AOS container, then:
+### Long way
+Connect to the AOS container, then:
 
 ```bash
 cd /demos/modules
