@@ -5,7 +5,7 @@ In particular, the container embeds the QEMU emulator, an image of the Linux ker
 
 The repository contains an [**`evil.c`**](https://github.com/LeoGori/SCH_playground/tree/main/demos/modules/evil.c) module, which implements the malicious code to hijack the system call getdents64 (get directory entries).
 
-This means that each process calling the aforementioned primitive (such as the ls shell command) will be hijacked in the execution of the "malicious" code inside the module, which in the implementation simply hides any file named "good".
+This means that each process calling the aforementioned primitive (such as the `ls` shell command) will be hijacked in the execution of the "malicious" code inside the module, which in the implementation simply hides any file named "good".
 
 # How to emulate the hijacking
 
@@ -25,7 +25,7 @@ Clone the repo and change directory inside the SCH_playground folder, then:
     ```
 - Create the good file
     ```
-    echo "Hello world|" > good
+    echo "Hello world!" > good
     ```
 - Check the integrity of the getdents64 syscall before the injection
     ```
